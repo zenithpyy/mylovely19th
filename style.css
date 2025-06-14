@@ -1,0 +1,162 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', cursive;
+    background: linear-gradient(to bottom right, #d8ecf7, #c0e0f5, #b0d4f0);
+    color: #234;
+    text-align: center;
+    padding-bottom: 80px;
+    position: relative;
+    z-index: 2;
+    background-attachment: fixed;
+  }  
+  
+  h1 {
+    margin-top: 40px;
+    font-size: 2.5em;
+    color: #145da0;
+  }
+  
+  .main-photo img {
+    width: 80%;
+    max-width: 900px;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    margin: 30px 0;
+  }
+  
+  .gallery {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 16px;
+    padding: 20px;
+    margin: 40px auto;
+    width: 90%;
+  }
+  
+  .gallery img {
+    flex: 0 0 auto;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 12px;
+    scroll-snap-align: center;
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    cursor: pointer;
+  }
+  
+  .gallery img:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Divider garis */
+  .divider {
+    width: 100%;
+    height: 40px;
+    background: linear-gradient(to right, transparent, #bcdffb, transparent);
+    position: relative;
+    margin: 60px 0;
+  }
+  .divider::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    width: 80%;
+    height: 2px;
+    background: #80b8e0;
+    border-radius: 50px;
+    opacity: 0.5;
+  }
+  
+  /* Hiasan malam */
+  .decorations {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 1;
+  }
+  
+  .stars::before {
+    content: '';
+    position: absolute;
+    width: 2000px;
+    height: 2000px;
+    background: transparent url('https://i.ibb.co/1KmGZsB/stars.png') repeat;
+    animation: twinkle 50s linear infinite;
+    opacity: 0.3;
+  }
+  
+  @keyframes twinkle {
+    from { transform: translate(0, 0); }
+    to { transform: translate(-500px, -500px); }
+  }
+  
+  .cloud {
+    position: absolute;
+    background: url('https://i.ibb.co/xSK3vv4/cloud.png') no-repeat center;
+    background-size: contain;
+    width: 200px;
+    height: 120px;
+    opacity: 0.2;
+    animation: cloudMove 60s linear infinite;
+  }
+  .cloud1 {
+    top: 10%;
+    left: -200px;
+    animation-delay: 0s;
+  }
+  .cloud2 {
+    top: 25%;
+    left: -300px;
+    animation-delay: 20s;
+  }
+  @keyframes cloudMove {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(150vw); }
+  }
+  
+  .hearts::before {
+    content: "💙 💙 💙 💙 💙 💙 💙";
+    position: absolute;
+    font-size: 24px;
+    animation: floatHearts 12s ease-in-out infinite;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0.3;
+    top: 10%;
+  }
+  @keyframes floatHearts {
+    0% { top: 10%; opacity: 0.3; }
+    50% { top: 60%; opacity: 0.6; }
+    100% { top: 10%; opacity: 0.3; }
+  }
+  
+  h2 {
+    color: #2471a3;
+    margin-top: 40px;
+    font-size: 1.8em;
+  }
+  
+  .video-gallery {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    margin-top: 20px;
+  }
+  
+  .video-gallery video {
+    width: 90%;
+    max-width: 800px;
+    border-radius: 16px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  }
+  
